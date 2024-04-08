@@ -20,16 +20,12 @@ const schema = makeExecutableSchema({
   resolvers: loadedResolvers,
 });
 
-const root = {
-  posts: require("./posts/posts.model"),
-  comments: require("./comments/comments.model"),
-};
+// model내 리턴하는 함수가 없는 경우에만 root필요
 
 app.use(
   "/graphql",
   graphqlHTTP({
     schema: schema,
-    rootValue: root,
     graphiql: true,
   })
 );

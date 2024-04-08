@@ -1,8 +1,9 @@
+const commmentModel = require("./comments.model");
+
 module.exports = {
   Query: {
-    comments: (parent) => {
-      console.log("resolver funciton for comments executed");
-      return parent.comments;
+    comments: () => {
+      return commmentModel.getAllComments();
     },
   },
 };
