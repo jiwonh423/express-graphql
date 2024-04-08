@@ -15,6 +15,13 @@ function getAllComments() {
   return comments;
 }
 
+function getCommentsByLikes(minLikes) {
+  return comments.filter((comment) => {
+    return comment.likes >= minLikes;
+  });
+}
+
 module.exports = {
   getAllComments,
+  getCommentsByLikes,
 };
