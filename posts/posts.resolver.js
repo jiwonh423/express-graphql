@@ -5,5 +5,8 @@ module.exports = {
     posts: () => {
       return postsModel.getAllPosts();
     },
+    post: (_, args) => {
+      return postsModel, postsModel.getPostById(args.id);
+    },
   },
 };
